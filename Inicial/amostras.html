@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amostras - Adicionar e Editar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">LabAdmin</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="amostras.html">Amostras</a></li>
+          <li class="nav-item"><a class="nav-link" href="anotacao.html">Fazer Anotação</a></li>
+          <li class="nav-item"><a class="nav-link" href="inventario.html">Inventário</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+    <h2 class="mb-4 text-center">Gerenciamento de Amostras</h2>
+
+    <!-- Nav Tabs -->
+    <ul class="nav nav-tabs mb-4" id="amostraTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="adicionar-tab" data-bs-toggle="tab" data-bs-target="#adicionar" type="button" role="tab">Adicionar Amostra</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="editar-tab" data-bs-toggle="tab" data-bs-target="#editar" type="button" role="tab">Editar Amostra</button>
+      </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content" id="amostraTabsContent">
+      <!-- Adicionar -->
+      <div class="tab-pane fade show active" id="adicionar" role="tabpanel">
+        <form>
+          <div class="mb-3">
+            <label for="codigo" class="form-label">Código da Amostra</label>
+            <input type="text" class="form-control" id="codigo">
+          </div>
+          <div class="mb-3">
+            <label for="descricao" class="form-label">Descrição</label>
+            <textarea class="form-control" id="descricao" rows="3"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="dataEntrada" class="form-label">Data de Entrada</label>
+            <input type="date" class="form-control" id="dataEntrada">
+          </div>
+          <button type="submit" class="btn btn-primary">Salvar Amostra</button>
+        </form>
+      </div>
+
+      <!-- Editar -->
+      <div class="tab-pane fade" id="editar" role="tabpanel">
+        <form>
+          <div class="mb-3">
+            <label for="buscarCodigo" class="form-label">Código da Amostra</label>
+            <input type="text" class="form-control" id="buscarCodigo" placeholder="Digite para buscar">
+          </div>
+          <div class="mb-3">
+            <label for="novaDescricao" class="form-label">Nova Descrição</label>
+            <textarea class="form-control" id="novaDescricao" rows="3"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="novaData" class="form-label">Nova Data de Entrada</label>
+            <input type="date" class="form-control" id="novaData">
+          </div>
+          <button type="submit" class="btn btn-primary">Atualizar Amostra</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
