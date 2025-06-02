@@ -30,8 +30,8 @@ class Dot {
         distance/=10.0;
         //distance /= sqrt(pow(windowWidth, 2)+pow(windowHeight, 2));
 
-        fill(255, round(255/distance));
-        stroke(255, round(255/distance));
+        fill(255, round(255*this.vel.mag()/10.0));
+        stroke(255, round(255*this.vel.mag()/10.0));
         strokeWeight(2)
 
         ///line(this.pos.x, this.pos.y, mouseX, mouseY);
@@ -40,11 +40,21 @@ class Dot {
         push();
         translate(this.pos.x, this.pos.y);
         rotate(this.a)
-        rect(0, 0, 30, 30, 5);
+        rect(0, 0, 5, 5, 5);
         pop();
 
     //}
     console.log("ok");
+  }
+}
+
+function setGradient() {
+  noFill();
+  for (var y = 0; y < height; y++) {
+    var inter = map(y, 0, height*5, 0, 1);
+    var c = lerpColor(color(8, 11, 14), color(22, 147, 163), inter);
+    stroke(c);
+    line(0, y, width, y);
   }
 }
 
@@ -72,7 +82,7 @@ function setup() {
 }
 
 function draw() {
-    background(18, 24, 31);
+    setGradient();
     showDots();
     updateDots();
 }
